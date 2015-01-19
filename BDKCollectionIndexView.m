@@ -58,7 +58,7 @@
 
 @implementation BDKCollectionIndexView
 
-@synthesize currentIndex = _currentIndex, direction = _direction, theDimension = _theDimension, labelColor = _labelColor, backgroundColor = _backgroundColor;
+@synthesize currentIndex = _currentIndex, direction = _direction, theDimension = _theDimension, labelFont = _labelFont, labelColor = _labelColor, backgroundColor = _backgroundColor;
 
 + (instancetype)indexViewWithFrame:(CGRect)frame indexTitles:(NSArray *)indexTitles {
     return [[self alloc] initWithFrame:frame indexTitles:indexTitles];
@@ -74,6 +74,7 @@
 
     _currentIndex = 0;
     _endPadding = 2;
+    _labelFont = [UIFont boldSystemFontOfSize:11];
     _labelColor = [UIColor blackColor];
     _backgroundColor = [UIColor clearColor];
 
@@ -167,7 +168,7 @@
         label.text = indexTitle;
         label.tag = tag;
         tag = tag + 1;
-        label.font = [UIFont boldSystemFontOfSize:12];
+        label.font = _labelFont;
         label.backgroundColor = _backgroundColor;
         label.textColor = _labelColor;
         label.textAlignment = NSTextAlignmentCenter;

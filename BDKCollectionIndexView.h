@@ -39,7 +39,10 @@ typedef NS_ENUM(NSInteger, BDKCollectionIndexViewDirection) {
  The index title at the index of `currentIndex`.
  */
 @property (readonly) NSString *currentIndexTitle;
-
+/**
+ The Font
+ */
+@property (strong, nonatomic) UIFont *labelFont;
 /**
  The colors
  */
